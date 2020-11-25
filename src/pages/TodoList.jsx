@@ -13,17 +13,19 @@ const TodoList = () => {
     { text: "Belajar React3" }
   ]);
 
+  const [showAdd, setShowAdd] = useState(false);
+
   const addTodo = (value) => {
     const addedTodo = [...todos, { text: value }];
     setTodos(addedTodo);
   };
 
-  console.log("todos", todos);
+  const showAddToggle = () => setShowAdd(!showAdd);
 
   return (
     <Paper>
-      <Header />
-      <TodoForm addTodo={addTodo} />
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+      <TodoForm showAdd={showAdd} addTodo={addTodo} />
       <Todos todos={todos} />
     </Paper>
   );
