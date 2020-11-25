@@ -12,10 +12,18 @@ const TodoList = () => {
     { text: "Belajar React2" },
     { text: "Belajar React3" }
   ]);
+
+  const addTodo = (value) => {
+    const addedTodo = [...todos, { text: value }];
+    setTodos(addedTodo);
+  };
+
+  console.log("todos", todos);
+
   return (
     <Paper>
       <Header />
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
       <Todos todos={todos} />
     </Paper>
   );
