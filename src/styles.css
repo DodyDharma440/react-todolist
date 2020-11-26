@@ -16,6 +16,14 @@
   color: var(--main-black-color);
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 html {
   font-size: 10px;
 }
@@ -59,13 +67,14 @@ html {
 }
 
 .header-title {
-  flex: 1;
+  width: 52%;
   text-align: center;
   font-size: 3.6rem;
   color: var(--main-black-color);
 }
 
 .header-btn {
+  width: 24%;
   font-size: 1.8rem;
   font-weight: bold;
   padding: 24px;
