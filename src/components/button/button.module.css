@@ -1,0 +1,34 @@
+.mainRedColor {
+  color: var(--main-red-color);
+}
+
+.mainBlackColor {
+  color: var(--main-black-color);
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.headerBtn {
+  width: 24%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 24px;
+  background: unset;
+  border: unset;
+  outline: unset;
+  cursor: pointer;
+}
+
+.headerBtn.mainRedColor:active {
+  text-shadow: 1px 2px 2px var(--main-red-color);
+}
+
+.headerBtn.mainBlackColor:active {
+  text-shadow: 1px 2px 2px var(--main-black-color);
+}
