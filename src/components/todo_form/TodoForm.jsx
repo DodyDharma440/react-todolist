@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+/** @jsx jsx */
+//import React from "react";
+import { jsx, useTheme } from "@emotion/react";
+import React from "react";
 import PropTypes from "prop-types";
-import styles from "./todoform.module.css";
+//import styles from "./todoform.module.css";
+import * as styles from "./todoform.styles";
 
 const TodoForm = ({ addTodo, showAdd }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = React.useState("");
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!value) {
@@ -11,8 +15,8 @@ const TodoForm = ({ addTodo, showAdd }) => {
       return;
     }
 
-    if (value.length > 40) {
-      alert("Karakter tidak boleh lebih dari 40!");
+    if (value.length > 30) {
+      alert("Karakter tidak boleh lebih dari 30!");
       setValue("");
       return;
     }
@@ -21,17 +25,18 @@ const TodoForm = ({ addTodo, showAdd }) => {
     setValue("");
   };
 
+  const theme = useTheme();
   if (showAdd) {
     return (
-      <section className={styles.add}>
-        <form className={styles.addForm} onSubmit={handleFormSubmit}>
+      <section css={styles.add}>
+        <form css={styles.addForm} onSubmit={handleFormSubmit}>
           <input
             type="text"
-            className={styles.addInput}
+            css={styles.addInput(theme)}
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <button className={styles.addBtn}>Add</button>
+          <button css={styles.addBtn(theme)}>Add</button>
         </form>
       </section>
     );

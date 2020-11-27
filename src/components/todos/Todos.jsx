@@ -1,12 +1,17 @@
-import React from "react";
+/** @jsx jsx */
+//import React from "react";
+import { jsx, useTheme } from "@emotion/react";
 import Todo from "../todo/Todo";
 import PropTypes from "prop-types";
 
-import styles from "./todos.module.css";
+//import styles from "./todos.module.css";
+
+import * as styles from "./todos.styles";
 
 const Todos = ({ todos, completeTodo }) => {
+  const theme = useTheme();
   return (
-    <section className={styles.todos}>
+    <section css={styles.todos}>
       {todos.length > 0 &&
         todos.map((todo, index) => {
           return (
@@ -20,9 +25,9 @@ const Todos = ({ todos, completeTodo }) => {
           );
         })}
       {todos.length === 0 && (
-        <div className={styles.todoPlaceholderText}>
+        <div css={styles.todoPlaceholderText(theme)}>
           Tambahkan todo dengan klik tombol{" "}
-          <span className={styles.addButtonPlaceholderText}>Add</span> yang ada
+          <span css={styles.addButtonPlaceholderText(theme)}>Add</span> yang ada
           di pojok kiri atas.
         </div>
       )}

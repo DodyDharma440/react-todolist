@@ -34,8 +34,6 @@ const TodoList = () => {
 
   const showAddToggle = () => setShowAdd(!showAdd);
 
-  console.log("todos", todos);
-
   return (
     <Paper>
       <Header
