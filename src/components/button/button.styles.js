@@ -19,7 +19,6 @@ export const button = ({ color, align, theme }) => {
   }
 
   return css`
-    width: 24%;
     font-size: 1.8rem;
     font-weight: bold;
     color: ${textColor};
@@ -29,5 +28,8 @@ export const button = ({ color, align, theme }) => {
     border: unset;
     outline: unset;
     cursor: pointer;
+    &:active {
+      text-shadow: 1px 2px 2px ${textColor};
+    }
   `;
 };

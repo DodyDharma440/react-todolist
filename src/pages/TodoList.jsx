@@ -6,6 +6,8 @@ import Header from "../components/header/Header";
 import TodoForm from "../components/todo_form/TodoForm";
 import Todos from "../components/todos/Todos";
 
+import Container from "../layout/Container";
+
 const TodoList = () => {
   const [todos, setTodos] = useState([
     { text: "Belajar React1", isCompleted: false },
@@ -36,13 +38,19 @@ const TodoList = () => {
 
   return (
     <Paper>
-      <Header
-        showAddToggle={showAddToggle}
-        showAdd={showAdd}
-        clearTodos={clearTodos}
-      />
-      <TodoForm showAdd={showAdd} addTodo={addTodo} />
-      <Todos todos={todos} completeTodo={completeTodo} />
+      <Container
+        flexDirection="column"
+        justifyContent="space-between"
+        height="100%"
+      >
+        <Header
+          showAddToggle={showAddToggle}
+          showAdd={showAdd}
+          clearTodos={clearTodos}
+        />
+        <TodoForm showAdd={showAdd} addTodo={addTodo} />
+        <Todos todos={todos} completeTodo={completeTodo} />
+      </Container>
     </Paper>
   );
 };
