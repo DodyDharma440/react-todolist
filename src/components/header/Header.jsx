@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 import * as styles from "./header.styles";
 
-import Button from "../button/Button";
+import Button from "../button/ButtonNoJSX";
 import Container from "../../layout/Container";
 import Item from "../../layout/Item";
 
