@@ -5,7 +5,7 @@ import Header from "../components/header/HeaderClass";
 import TodoForm from "../components/todo_form/TodoFormClass";
 import Todos from "../components/todos/TodosClass";
 
-import Container from "../layout/Container";
+import Container from "../layout/ContainerClass";
 
 class TodoList extends React.Component {
   state = {
