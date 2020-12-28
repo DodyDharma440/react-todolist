@@ -16,3 +16,11 @@ export const addButtonPlaceholderText = (theme) => {
     color: ${theme.color.primary.black};
   `;
 };
+
+export const seeAboutPagePlaceholderText = () => {
+  return css`
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  `;
+};

@@ -1,8 +1,10 @@
 /** @jsx jsx */
-//import React from "react";
+import React from "react";
 import { jsx, useTheme } from "@emotion/react";
 import Todo from "../todo/TodoClass";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 import Container from "../../layout/Container";
 import Item from "../../layout/Item";
 
@@ -28,11 +30,20 @@ const Todos = ({ todos, completeTodo }) => {
             );
           })}
         {todos.length === 0 && (
-          <div css={styles.todoPlaceholderText(theme)}>
-            Tambahkan todo dengan klik tombol{" "}
-            <span css={styles.addButtonPlaceholderText(theme)}>Add</span> yang
-            ada di pojok kiri atas.
-          </div>
+          <React.Fragment>
+            <div css={styles.todoPlaceholderText(theme)}>
+              Tambahkan todo dengan klik tombol{" "}
+              <span css={styles.addButtonPlaceholderText(theme)}>Add</span> yang
+              ada di pojok kiri atas.
+            </div>
+            <Container justifyContent="center">
+              <Item>
+                <span css={styles.seeAboutPagePlaceholderText}>
+                  <Link to="/about">Tentang aplikasi ini</Link>
+                </span>
+              </Item>
+            </Container>
+          </React.Fragment>
         )}
       </Container>
     </section>
