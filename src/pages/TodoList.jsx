@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import useStateWithLocalStorage from "../hooks/useStateWithLocalStorage";
 //Components
 import Paper from "../components/paper/PaperClass";
 import Header from "../components/header/HeaderClass";
@@ -9,11 +10,7 @@ import Todos from "../components/todos/TodosClass";
 import Container from "../layout/Container";
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([
-    { text: "Belajar React1", isCompleted: false },
-    { text: "Belajar React2", isCompleted: false },
-    { text: "Belajar React3", isCompleted: false }
-  ]);
+  const [todos, setTodos] = useStateWithLocalStorage("todos");
 
   const [showAdd, setShowAdd] = useState(false);
 
